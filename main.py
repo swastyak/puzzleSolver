@@ -152,7 +152,7 @@ class node:
     # -> a given puzzle state, and helps deal with diff. search algos.
     # self.board = arrangement of tiles for this node
     # self.depth = depth of this arrangement's node from the top
-    # self.cost = to be updated based on heuristic, standard (UFC) = 0
+    # self.cost = to be updated based on heuristic, standard (UCS) = 0
     def __init__(self, board, depth, cost):
         self.board = board
         self.depth = depth
@@ -163,7 +163,7 @@ def generalSearch(state, searchType, goalFinale):
     # Frontier will be the queue of nodes; top will have next node to visit
     # Iterations variable will be used to print how many nodes were expanded
     # maxQueueSize will determine how much space is needed to run algo.
-    # Search type 1 = UFC, 2 = Misplaced tile, 3 = Manhattan
+    # Search type 1 = UCS, 2 = Misplaced tile, 3 = Manhattan
     # While loop condition: repeat cases until node is found or no solution.
     # Inside while loop: node to expand will always be on top; top depends on queueing function for later iterations
     # Inside while loop: lambda function used to sort frontier based on node's depth + cost
