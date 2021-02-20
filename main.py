@@ -182,7 +182,7 @@ def generalSearch(state, searchType, goalFinale):
         outputArray.append("The best node to expand with a g(n) = " + str(node.depth) +
                            " and h(n) = " + str(node.cost) + " is..." + str(node.board))
         if (node.board == goalFinale):
-            print("This is the goal state!!\nTo solve this problem the search algorithm expanded a total of " +
+            print("Found the goal state!!\nTo solve this problem the search algorithm expanded a total of " +
                   str(iterations) + " nodes.")
             print("The maximum number of nodes in the queue at anytime was " +
                   str(maxQueueSize) + " nodes.")
@@ -220,7 +220,7 @@ def main():
     print("This is the goal board. " + str(goalFinale))
     searchType = input(
         "Enter choice of algorithm. 1 for Uniform Cost, 2 for Misplaced Tile, 3 for Manhattan Distance")
-    print("Starting with beginning state of: " + str(test.board) + "Timer will be turned on now.")
+    print("Starting with beginning state of: " + str(test.board) + "\nTimer will be turned on now.")
     start_time = time.time()
     dn = generalSearch(test, searchType, goalFinale)
     print("Total runtime was " + str(time.time() - start_time) + " seconds.")
@@ -228,7 +228,12 @@ def main():
     print("Outputting order in which nodes were visited to output.txt...")
     with open('output.txt', 'w') as f:
         for i in range(len(outputArray)):
-            print(outputArray[i], file=f)
+            if i == 0:
+                print(
+                    outputArray[i] + " Please ignore h(n) for first case, all nodes are initialized with 0. \
+                    \nThe node never hits the while loop, it is the special first case.", file=f)
+            else:
+                print(outputArray[i], file=f)
 
 
 main()
