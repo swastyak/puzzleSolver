@@ -219,7 +219,7 @@ def main():
     print("This was the input board. " + str(test.board))
     print("This is the goal board. " + str(goalFinale))
     searchType = input(
-        "Enter choice of algorithm. 1 for Uniform Cost, 2 for Misplaced Tile, 3 for Manhattan Distance")
+        "Enter choice of algorithm. 1 for Uniform Cost, 2 for Misplaced Tile, 3 for Manhattan Distance\n")
     print("Starting with beginning state of: " + str(test.board) + "\nTimer will be turned on now.")
     start_time = time.time()
     dn = generalSearch(test, searchType, goalFinale)
