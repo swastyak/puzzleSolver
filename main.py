@@ -205,7 +205,7 @@ def main():
     # Also outputs to file order in which nodes were visited (for tracing)
     # Also creates "goalFinale," which is the desired solution state ->
     # -> for nxn user input puzzle
-    print("Welcome to Bertie Woosters 8-puzzle solver.")
+    print("Welcome to Swastyak's 8-puzzle solver.")
     puzzleType = input("Type “1” to use a default puzzle, or “2” to enter own puzzle.\n")
     boardd = createBoard(puzzleType)
     test = node(boardd, 0, 0)
